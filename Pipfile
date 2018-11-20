@@ -8,6 +8,8 @@ expects = "*"
 mamba = "*"
 doublex = "*"
 doublex-expects = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
 
 [packages]
 python-sample = {path = ".",editable = true}
