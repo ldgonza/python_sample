@@ -23,6 +23,55 @@ Features included:
 
 ## Use
 
+### New project
+
+Export the full contents of the repo into a new directory, run git init inside:
+
+(Note: github does not allow to run 'git archive' directly against their repos).
+```
+$ git clone git@github.com:ldgonza/python_sample.git
+$ cd python_sample
+$ git archive --format=tgz HEAD > python_sample.tgz
+$ mv python_sample ../ && cd ..
+```
+
+Create new directory for new project and extract all contents there:
+
+```
+$ mkdir new_project
+$ mv python_sample.tgz new_project
+$ cd new_project
+$ tar -xzf python_sample.tgz
+$ rm python_sample.tgz
+```
+
+Init git, make the first commit
+
+```
+$ git init
+$ git add -a
+$ git commit -m "Init project structure."
+```
+
+### Basics
+
+Install pip, use pip to install pipenv. Then, use pipenv from the project directory.
+
+On first checkout, get the dependencies using pipenv install. 
+Then, run the program from the virtual env shell.
+
+```
+$ pipenv install
+$ pipenv shell
+(virtual-env-name) $ python ./python_sample/python_sample.py
+```
+
+Use pipenv install from the project directory to manage the pipfile (no need to enter the virtual env to do it). 
+
+```
+$ pipenv install mamba
+```
+
 ### Project code
 
 Replace python_sample entirely with the project's source code.
